@@ -18,12 +18,16 @@ services:
       - DB_NAME=app
       - DB_USER=postgres
       - DB_PASS=pass#123
+      - DB_PORT=5432
+
     depends_on:
       - db
 
   db:
     restart: always
     image: postgres:10-alpine
+    ports:
+      - "5434:5432"
     environment:
       - POSTGRES_DB=app
       - POSTGRES_USER=postgres
