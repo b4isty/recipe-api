@@ -26,6 +26,7 @@ services:
   db:
     restart: always
     image: postgres:10-alpine
+    container_name: db
     ports:
       - "5434:5432"
     environment:
